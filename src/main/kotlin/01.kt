@@ -3,7 +3,6 @@ import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    //println(-1000 / 100)
     //part1()
     part2()
 }
@@ -31,19 +30,23 @@ private fun part2() {
     var zeroCount = 0
     var currentPoint = 50
 
-    val mock = listOf(Pair('L', 1000))
     parseInput().forEach { (dir, amount) ->
-        currentPoint = when (dir) {
-            'L' -> currentPoint - amount
-            'R' -> currentPoint + amount
-            else -> currentPoint
+        repeat(amount) {
+            if (dir == 'R')
+                currentPoint += 1
+            else
+                currentPoint -= 1
+            when (currentPoint) {
+                100 -> {
+                    currentPoint = 0
+                    zeroCount++
+                }
+                -1 -> {
+                    currentPoint = 99
+                }
+                0 -> zeroCount++
+            }
         }
-
-        if (currentPoint / 100 > 0) zeroCount += currentPoint / 100
-        if (currentPoint / 100 < 0) zeroCount += (currentPoint / 100) * -1
-        currentPoint = ((currentPoint % 100) + 100) % 100
-
-        if (currentPoint == 0) zeroCount++
     }
 
     println(zeroCount)
