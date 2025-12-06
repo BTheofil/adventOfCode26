@@ -2,7 +2,8 @@ import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    day2part1()
+    //day2part1()
+    day2part2()
 }
 
 fun day2part1() {
@@ -20,6 +21,27 @@ fun day2part1() {
                     if (matched == idLength / 2) {
                         invalidIds.add(id)
                     }
+                }
+            }
+        }
+    }
+
+    println(invalidIds.sum())
+}
+
+fun day2part2() {
+    val invalidIds = mutableListOf<Long>()
+
+    parseInput2().forEach { (start, end) ->
+        for (id in start..end) {
+            val maxChunkLength = id.toString().length / 2
+            for (chunk in 1..maxChunkLength) {
+                val chunks = id.toString().chunked(chunk)
+                val isInvalidId = chunks.all { it == chunks.first() }
+
+                if (isInvalidId) {
+                    invalidIds.add(id)
+                    break
                 }
             }
         }
