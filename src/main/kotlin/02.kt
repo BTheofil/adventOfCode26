@@ -6,7 +6,7 @@ fun main() {
     day2part2()
 }
 
-fun day2part1() {
+private fun day2part1() {
     val invalidIds = mutableListOf<Long>()
     //val mock = listOf(446446,38593859)
     parseInput2().forEach { (start, end) ->
@@ -29,7 +29,7 @@ fun day2part1() {
     println(invalidIds.sum())
 }
 
-fun day2part2() {
+private fun day2part2() {
     val invalidIds = mutableListOf<Long>()
 
     parseInput2().forEach { (start, end) ->
@@ -50,7 +50,7 @@ fun day2part2() {
     println(invalidIds.sum())
 }
 
-fun parseInput2(): List<Pair<Long, Long>> =
+private fun parseInput2(): List<Pair<Long, Long>> =
     Path("src/main/resources/day2.txt")
         .readLines()
         .flatMap { line ->

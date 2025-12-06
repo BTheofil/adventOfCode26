@@ -52,7 +52,7 @@ private fun part2() {
     println(zeroCount)
 }
 
-fun parseInput(): List<Pair<Char, Int>> =
+private fun parseInput(): List<Pair<Char, Int>> =
     Path("src/main/resources/day1.txt").readLines().map {
         val direction = it.first()
         val number = it.drop(1).toInt()
