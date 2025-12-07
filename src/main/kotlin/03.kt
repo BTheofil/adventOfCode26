@@ -8,15 +8,19 @@ fun main() {
 private fun day3part1() {
     val banks = mutableListOf<Int>()
 
+    val mock = listOf("82223333323")
     parseFile().forEach { line ->
-        val searchString = line.dropLast(1)
-        (9 downTo 1).forEach { s ->
-            val c = s.toString()[0]
-            val index = searchString.indexOf(c)
-            if (index != -1) {
-                val firstDigit = line[index].toString()
-                val secondDigit = line.drop(index + 1).max().toString()
-                banks.add("$firstDigit$secondDigit".toInt())
+        for (number in 99 downTo 11) {
+            val tensDigit = (number / 10).digitToChar()
+            val onesDigit = (number % 10).digitToChar()
+            val tensDigitIndex = line.indexOf(tensDigit)
+            if (tensDigitIndex != -1) {
+                val onesDigitIndex = line.indexOf(startIndex = tensDigitIndex + 1, char = onesDigit)
+                if (onesDigitIndex != -1) {
+                    println(number)
+                    banks.add(number)
+                    break
+                }
             }
         }
     }
