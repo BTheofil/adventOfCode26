@@ -2,6 +2,33 @@ import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
+    //part1()
+    part2()
+}
+
+private fun part2() {
+    var papers = parse()
+    var removedPaperCount = 0
+
+    while (true) {
+        val currentSize = papers.size
+        val afterFilterSize = papers.filter { paper ->
+            val neighbours = paper.getPosNeighbours()
+            val countExisting = neighbours.count { it in papers }
+            countExisting >= 4
+        }
+
+        if (afterFilterSize.size == currentSize) break
+
+        removedPaperCount += papers.size - afterFilterSize.size
+
+        papers = afterFilterSize
+    }
+
+    println(removedPaperCount)
+}
+
+private fun part1() {
     val paperPosList = parse()
 
     val result = paperPosList.count { pos ->
