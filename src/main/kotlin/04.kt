@@ -51,7 +51,7 @@ data class PaperPos(val x: Int, val y: Int) {
         neighbourOffsets.map { PaperPos(x + it.x, y + it.y) }
 }
 
-private fun parse(): List<PaperPos> = Path("src/main/resources/day4.txt")
+private fun parse(): List<PaperPos> = Path("src/main/resources/year25/day4.txt")
     .readLines()
     .flatMapIndexed { y, line ->
         line.mapIndexedNotNull { x, ch -> if (ch == '@') PaperPos(x = x, y = y) else null }

@@ -68,5 +68,5 @@ private fun findNextBigDigit(
     return TODO("Provide the return value")
 }
 
-private fun parseFile(): List<String> = Path("src/main/resources/day3.txt")
+private fun parseFile(): List<String> = Path("src/main/resources/year25/day3.txt")
     .readLines()

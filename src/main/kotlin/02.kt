@@ -51,7 +51,7 @@ private fun day2part2() {
 }
 
 private fun parseInput2(): List<Pair<Long, Long>> =
-    Path("src/main/resources/day2.txt")
+    Path("src/main/resources/year25/day2.txt")
         .readLines()
         .flatMap { line ->
             line.split(",").map { range ->
