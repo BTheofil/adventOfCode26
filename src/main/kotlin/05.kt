@@ -16,6 +16,15 @@ fun main() {
         ids.add(line)
     }
 
+    val freshCount = mutableListOf<String>()
+    ids.forEach { id ->
+        ranges.forEach { range ->
+            if (id.toLong() in range.first.toLong()..range.second.toLong())
+                freshCount.add(id)
+        }
+    }
+
+    println(freshCount.distinct().size)
 }
 
 private fun parseFile(): List<String> =
