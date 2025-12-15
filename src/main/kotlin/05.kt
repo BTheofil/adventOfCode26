@@ -27,6 +27,10 @@ fun main() {
     println(freshCount.distinct().size)
 }
 
+private fun part2() {
+
+}
+
 private fun parseFile(): List<String> =
     Path("src/main/resources/year25/day5.txt")
         .readLines()
