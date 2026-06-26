@@ -1,8 +1,10 @@
+package year25
+
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    //part1()
+    //year25.part1()
     part2()
 }
 
@@ -69,5 +71,5 @@ private fun getRanges(): List<Pair<String, String>> {
 }
 
 private fun parseFile(): List<String> =
-    Path("src/main/resources/year25/day5.txt")
+    Path("src/year25.main/resources/year25/day5.txt")
         .readLines()

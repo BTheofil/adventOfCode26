@@ -1,8 +1,10 @@
+package year25
+
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    //day2part1()
+    //year25.day2part1()
     day2part2()
 }
 
@@ -51,7 +53,7 @@ private fun day2part2() {
 }
 
 private fun parseInput2(): List<Pair<Long, Long>> =
-    Path("src/main/resources/year25/day2.txt")
+    Path("src/year25.main/resources/year25/day2.txt")
         .readLines()
         .flatMap { line ->
             line.split(",").map { range ->

@@ -20,5 +20,5 @@ fun main() {
     println("first basement index: $firstBasementInx")
 }
 
-private fun parseFile(): List<String> = Path("src/main/resources/year15/d1.txt")
+private fun parseFile(): List<String> = Path("src/main/resources/year15/01.txt")
     .readLines()

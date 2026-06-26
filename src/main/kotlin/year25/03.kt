@@ -1,8 +1,10 @@
+package year25
+
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    //day3part1()
+    //year25.day3part1()
     day3part2()
 }
 
@@ -68,5 +70,5 @@ private fun findNextBigDigit(
     return TODO("Provide the return value")
 }
 
-private fun parseFile(): List<String> = Path("src/main/resources/year25/day3.txt")
+private fun parseFile(): List<String> = Path("src/year25.main/resources/year25/day3.txt")
     .readLines()

@@ -1,9 +1,11 @@
+package year25
+
 import kotlin.collections.forEach
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    //part1()
+    //year25.part1()
     part2()
 }
 
@@ -53,7 +55,7 @@ private fun part2() {
 }
 
 private fun parseInput(): List<Pair<Char, Int>> =
-    Path("src/main/resources/year25/day1.txt").readLines().map {
+    Path("src/year25.main/resources/year25/day1.txt").readLines().map {
         val direction = it.first()
         val number = it.drop(1).toInt()
         direction to number

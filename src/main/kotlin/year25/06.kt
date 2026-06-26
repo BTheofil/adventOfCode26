@@ -1,8 +1,10 @@
+package year25
+
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    //part1()
+    //year25.part1()
     part2()
 }
 
@@ -33,7 +35,7 @@ private fun part1() {
 }
 
 private fun part2() {
-    val lines = Path("src/main/resources/year25/day6.txt")
+    val lines = Path("src/year25.main/resources/year25/day6.txt")
         .readLines()
 
     val operatorLine = lines.last().trim().split(Regex("\\s+"))
@@ -97,7 +99,7 @@ private fun parse(): Data {
     val numberRows = mutableListOf<List<Int>>()
     var operators: List<String> = emptyList()
 
-    Path("src/main/resources/year25/day6.txt")
+    Path("src/year25.main/resources/year25/day6.txt")
         .readLines()
         .forEach { line ->
             val formattedLine = line.trim().split(Regex("\\s+"))

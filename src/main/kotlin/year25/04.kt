@@ -1,8 +1,10 @@
+package year25
+
 import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    //part1()
+    //year25.part1()
     part2()
 }
 
@@ -42,7 +44,7 @@ private fun part1() {
 
 val neighbourOffsets = listOf(
     PaperPos(-1, -1), PaperPos(0, -1), PaperPos(1, -1),
-    PaperPos(-1, 0), /*PaperPos(0, 0),*/ PaperPos(1, 0),
+    PaperPos(-1, 0), /*year25.PaperPos(0, 0),*/ PaperPos(1, 0),
     PaperPos(-1, 1), PaperPos(0, 1), PaperPos(1, 1)
 )
 
@@ -51,7 +53,7 @@ data class PaperPos(val x: Int, val y: Int) {
         neighbourOffsets.map { PaperPos(x + it.x, y + it.y) }
 }
 
-private fun parse(): List<PaperPos> = Path("src/main/resources/year25/day4.txt")
+private fun parse(): List<PaperPos> = Path("src/year25.main/resources/year25/day4.txt")
     .readLines()
     .flatMapIndexed { y, line ->
         line.mapIndexedNotNull { x, ch -> if (ch == '@') PaperPos(x = x, y = y) else null }
