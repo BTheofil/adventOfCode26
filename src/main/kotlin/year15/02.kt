@@ -8,7 +8,7 @@ fun main() {
     part2()
 }
 
-fun part1() {
+private fun part1() {
     var solution = 0
 
     parseFile().forEach { line ->
@@ -25,7 +25,7 @@ fun part1() {
     println(solution)
 }
 
-fun part2() {
+private fun part2() {
     var solution = 0
 
     parseFile().forEach { line ->
