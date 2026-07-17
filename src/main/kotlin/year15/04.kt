@@ -5,7 +5,31 @@ import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.concurrent.thread
 
-fun main()  {
+fun main() {
+    //part1()
+    part2()
+}
+
+private fun part1() {
+    val generatedHash = "ckczppom"
+    var count = 0
+    while (true) {
+        val md5Promo = (generatedHash + count.toString()).toMd5()
+
+        val first5Char = md5Promo.substring(0, 5)
+
+        if (first5Char == "00000") {
+            println(count)
+            break
+        } else {
+            count++
+        }
+
+    }
+
+}
+
+private fun part2() {
     val secretKey = "ckczppom"
     val baseBytes = secretKey.toByteArray(Charsets.UTF_8)
 
