@@ -10,7 +10,15 @@ fun main() {
 
     }
 
-    println(getSignal("a"))
+    val part1 = getSignal("a")
+    println(part1)
+
+    instructions["b"] = listOf(part1.toString())
+
+    cache.clear()
+
+    val part2 = getSignal("a")
+    println(part2)
 }
 
 private fun getSignal(wire: String): Int {
